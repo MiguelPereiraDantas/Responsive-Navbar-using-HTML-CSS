@@ -1,0 +1,69 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      position: fixed;
+      background: #333;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      clip-path: circle(100px at 90% -10%);
+      -webkit-clip-path: circle(100px at 90% -10%);
+      transition: all 0.3s ease-out;
+      pointer-events: none;
+      opacity: 0;
+  }
+
+  .nav-links.show {
+      clip-path: circle(1000px at 90% -10%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+      opacity: 1;
+  }
+
+  .nav-links li {
+      padding: 20px;
+  }
+
+  #nav-toggle {
+      display: block;
+      font-size: 1.5rem;
+      cursor: pointer;
+  }
+}
